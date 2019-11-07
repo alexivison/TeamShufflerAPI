@@ -1,26 +1,26 @@
 import FluentSQLite
 import Vapor
 
-/// A single entry of a Todo list.
+/// A single entry of a Member list.
 final class Member: SQLiteModel {
-    /// The unique identifier for this `Todo`.
+    /// The unique identifier for this `Member`.
     var id: Int?
 
-    /// A title describing what this `Todo` entails.
+    /// A title describing what this `Member` entails.
     var name: String
 
-    /// Creates a new `Todo`.
+    /// Creates a new `Member`.
     init(id: Int? = nil, title: String) {
         self.id = id
         self.name = title
     }
 }
 
-/// Allows `Todo` to be used as a dynamic migration.
+/// Allows `Member` to be used as a dynamic migration.
 extension Member: Migration { }
 
-/// Allows `Todo` to be encoded to and decoded from HTTP messages.
+/// Allows `Member` to be encoded to and decoded from HTTP messages.
 extension Member: Content { }
 
-/// Allows `Todo` to be used as a dynamic parameter in route definitions.
+/// Allows `Member` to be used as a dynamic parameter in route definitions.
 extension Member: Parameter { }
